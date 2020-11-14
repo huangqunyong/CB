@@ -1,0 +1,43 @@
+def block(x,y,list)
+	#先判断当前块是否被破坏
+	while list[x][y] != 9
+		#备份一份当前块
+		block = list[x][y]
+		#破坏当前块,以免后续判断回环
+		list[x][y] = 9
+		#当行数在最左侧时，判断右方块是否相同
+		while x = 0:
+			#相同递归连锁破坏
+			if(list[x+1][y] == block):
+				block(x+1,y,list[x+1][y])
+		#当行数在最右侧时，判断左方块是否相同
+		while x = size - 1:
+			#相同递归连锁破坏
+			if(list[x-1][y] == block):
+				block(x-1,y,list[x-1][y])
+		#当行数没有超出设置范围，并且在内部时,判断左右方块是否相同
+		while x > 0 and x < size - 1:
+			#判断左方块是否相同，相同递归连锁破坏
+			if(list[x-1][y] == block):
+				block(x-1,y,list[x-1][y])
+			#判断右方块是否相同，相同递归连锁破坏
+			if(list[x+1][y] == block):
+				block(x+1,y,list[x+1][y])
+		#当行数在最上侧时，判断下方块是否相同
+		while y = 0:
+			#相同递归连锁破坏
+			if(list[x][y+1] == block):
+				block(x,y+1,list[x][y+1])
+		#当行数在最下侧时，判断上方块是否相同
+		while y = size - 1:
+			#相同递归连锁破坏
+			if(list[x][y-1] == block):
+				block(x,y-1,list[x][y-1])
+		#当列数没有超出设置范围，并且在内部时，判断上下方块是否相同
+		while y > 0 and y < size - 1:
+			#判断上方块是否相同，相同递归连锁破坏
+			if(list[x][y-1] == block):
+				block(x,y-1,list[x][y-1])
+			#判断下方块是否相同，相同递归连锁破坏
+			if(list[x][y+1] == block]):
+				block(x,y+1,list[x][y+1])

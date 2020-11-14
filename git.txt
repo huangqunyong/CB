@@ -1,0 +1,8 @@
+git init
+git status
+git add *
+git commit -m "test"
+git config --global user.name=""  github username
+git config --global user.email=""   github email
+git remote add origin https://github.com/huangqunyong/CB.git
+git push -u origin main
